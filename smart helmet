@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Helmet System</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    #status {
+      font-size: 20px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Smart Helmet for Two-Wheelers</h1>
+
+<button onclick="wearHelmet()">Wear Helmet</button>
+<button onclick="removeHelmet()">Remove Helmet</button>
+<button onclick="startBike()">Start Bike</button>
+<button onclick="sendAlert()">Emergency Alert</button>
+
+<div id="status">Status: Helmet Not Worn</div>
+
+<script>
+let helmetWorn = false;
+
+function wearHelmet() {
+  helmetWorn = true;
+  document.getElementById("status").innerText = "Status: Helmet Worn";
+}
+
+function removeHelmet() {
+  helmetWorn = false;
+  document.getElementById("status").innerText = "Status: Helmet Not Worn";
+}
+
+function startBike() {
+  if (helmetWorn) {
+    alert("Bike Started ✅");
+  } else {
+    alert("Cannot Start Bike ❌ Please wear helmet!");
+  }
+}
+
+function sendAlert() {
+  alert("Emergency Alert Sent 🚨");
+}
+</script>
+
+</body>
+</html>
